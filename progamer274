@@ -2351,15 +2351,24 @@ wait(1)
 -- AUTOFOV SOON
 register_key = "KEY_HERE"; -- u dont need key if i HWID whitelisted you.
 
-local RunService = game:GetService("RunService")
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/strongprime/source/main/source", true))()
 DaHoodSettings.Prediction = 0.138
 getgenv().Aiming.TargetPart = {"Head", "HumanoidRootPart", "LowerTorso", "RightFoot", "LeftFoot" }
 getgenv().Aiming.HitChance = 400 -- change to this around 90 or 70 hit chance to be legit
 getgenv().Aiming.ShowFOV = true
 getgenv().Aiming.FOV = 25
-getgenv().Tsuro = True loadstring(game:HttpGet("https://pastebin.com/raw/Vj3ey5Sa"))()
+
+RunService.Heartbeat:Connect(function()
+    pcall(function()
+        for i,v in pairs(game.Players:GetChildren()) do
+            if v.Name ~= game.Players.LocalPlayer.Name then
+                local hrp = v.Character.HumanoidRootPart
+                hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)    
+                hrp.AssemblyLinearVelocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)   
+            end
+        end
+    end)
+end)
 
 
 --made by Tsuro
