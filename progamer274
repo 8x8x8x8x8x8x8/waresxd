@@ -1319,21 +1319,23 @@
 
 
 
-print("Wares [1/4] Authenticating..")
-
-wait(2)
-
-print("Wares [2/4] Authenticating..")
+print("[WARES]: [1/5] Authenticating...")
 
 wait(1)
 
-print("Wares [3/4] Authenticating..")
+print("[WARES]: [2/5] Checking..")
 
-wait(1)
+wait(0)
 
-print("Wares [4/4] Authenticating..")
+print("[WARES]: [3/5] Connecting to license server...")
 
-wait(1)
+wait(0)
+
+print("[WARES]: [4/5] Starting hearbeat..")
+
+wait(0)
+
+print("[WARES]: [5/5] Successfully authenticated!")
 
 
 
