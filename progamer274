@@ -2358,6 +2358,8 @@ getgenv().Aiming.HitChance = 400 -- change to this around 90 or 70 hit chance to
 getgenv().Aiming.ShowFOV = true
 getgenv().Aiming.FOV = 25
 
+local RunService = game:GetService("RunService")
+
 RunService.Heartbeat:Connect(function()
     pcall(function()
         for i,v in pairs(game.Players:GetChildren()) do
